@@ -133,3 +133,129 @@ const rightPrice = products
     })
 
 console.log(rightPrice)
+
+/////////// Chaining Methods 9 ///////////
+
+const totalOfProductsOver10 = products
+    .filter(product => product.price > 10)
+    .reduce( (sum, product) => sum + product.price, 0)
+    .toFixed(2)
+
+console.log(totalOfProductsOver10)
+
+/////////// Chaining Methods 9 ///////////
+
+const purchaseItems = [
+    {
+        name: 'apples',
+        dept: 'groceries',
+        price: 2.49
+    },
+    {
+        name: 'bread',
+        dept: 'groceries',
+        price: 2.99
+    },
+    {
+        name: 'batteries',
+        dept: 'electronics',
+        price: 5.80
+    },
+    {
+        name: 'eggs',
+        dept: 'groceries',
+        price: 3.99
+    },
+    {
+        name: 't-shirts',
+        dept: 'apparel',
+        price: 9.99
+    }
+];
+
+const groceryTotal = purchaseItems
+  .filter(item => item.dept === "groceries")
+  .reduce((sum, item) => sum + item.price, 0)
+  .toFixed(2)
+
+console.log(groceryTotal)
+
+/////////// Chaining Methods 10 ///////////
+
+const movies = [
+  ['The Day the Earth Stood Still', 'Superman', 'Ghostbusters'],
+  ['Finding Dory'],
+  ['Jaws', 'On the Waterfront']
+]
+
+const flatMovies = movies.reduce((array, innerMovies) => [...array, ...innerMovies], [])
+console.log(flatMovies)
+
+/////////// Chaining Methods 11 ///////////
+
+const users2 = [
+  {
+    name: 'Samir',
+    age: 27,
+    favoriteBooks:[
+      {title: 'The Iliad'},
+      {title: 'The Brothers Karamazov'}
+    ]
+  },
+  {
+    name: 'Angela',
+    age: 33,
+    favoriteBooks:[
+      {title: 'Tenth of December'},
+      {title: 'Cloud Atlas'},
+      {title: 'One Hundred Years of Solitude'}
+    ]
+  },
+  {
+    name: 'Beatrice',
+    age: 42,
+    favoriteBooks:[
+      {title: 'Candide'}
+    ]
+  }
+];
+
+const books = users2
+    .map(user => user.favoriteBooks.map(book => book.title)) //map over a map!
+    .reduce((arr, titles) => [...arr, ...titles],[])
+
+console.log("\n")
+console.log(books)
+
+/////////// Chaining Methods 12 ///////////
+
+const customers = [
+  {
+    name: "Tyrone",
+    personal: {
+      age: 33,
+      hobbies: ["Bicycling", "Camping"]
+    }
+  },
+  {
+    name: "Elizabeth",
+    personal: {
+      age: 25,
+      hobbies: ["Guitar", "Reading", "Gardening"]
+    }
+  },
+  {
+    name: "Penny",
+    personal: {
+      age: 36,
+      hobbies: ["Comics", "Chess", "Legos"]
+    }
+  }
+];
+
+//customers.forEach(ele => console.log(ele.personal.hobbies))
+
+const hobbies = customers
+  .reduce((arr, hobby) => [...arr, ...hobby.personal.hobbies] ,[])
+
+console.log(hobbies)
