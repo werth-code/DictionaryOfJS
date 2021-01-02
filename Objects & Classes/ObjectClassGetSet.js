@@ -1,3 +1,5 @@
+// Creating A Class Constructor With Getter/Setter
+
 class Pet {
   constructor(animal, age, breed, sound) {
     this.animal = animal;
