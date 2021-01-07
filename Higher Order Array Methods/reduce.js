@@ -21,3 +21,4 @@ numberOf503 = phoneNumbers.reduce((count, number) => {
   if(number.substring(0,5) === "(503)") return ++count
   else return count
 }, 0)
+
