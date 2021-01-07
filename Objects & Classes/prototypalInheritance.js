@@ -16,3 +16,32 @@ Child.prototype = Object.create(Parent.prototype) //You have to set Child -> Par
 
 const adam = new Child("Adam", 6)
 adam.speak()
+
+
+
+
+
+
+////////
+
+
+
+function Animal(name, weight) {
+    this.name = name;
+    this.weight = weight;
+}
+
+Animal.prototype.info = function() {
+    console.log(`${this.name}, weighs ${this.weight} pounds.`)
+}
+
+function Tiger(name, weight) {
+    Animal.call(this, name, weight)
+}
+Tiger.prototype = Object.create(Animal.prototype)
+
+const tiger = new Tiger("Timmy Tiger", 150)
+const animal = new Animal("Timmy Animal", 100)
+
+animal.info()
+tiger.info()
