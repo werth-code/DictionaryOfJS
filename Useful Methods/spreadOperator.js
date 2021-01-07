@@ -1,3 +1,14 @@
+arr1 = [1,2,3]
+arr2 = [3,4,5]
+
+arr3 = [...arr1, ...arr2] // Can add multiple arrays or values.
+arr4 = ["Candy", ...arr1, ...arr2, "Cupcake"]
+
+console.log(arr3)
+console.log(arr4)
+
+console.log(" --- --- --- --- ")
+
 const movies = [
   ['The Day the Earth Stood Still', 'Superman', 'Ghostbusters'],
   ['Finding Dory'],
@@ -15,5 +26,5 @@ const customerNames = [
     [ "Portia", "Pam", "Philip" ]
 ];
  
-const flattenedCustomerNames = customerNames.reduce((arr, name) => [...arr, ...name],[])
+const flattenedCustomerNames = customerNames.reduce( (arr, name) => [...arr, ...name],[] )
 console.log(flattenedCustomerNames)
