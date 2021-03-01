@@ -1,4 +1,4 @@
-// Hoisting
+// Hoisting - Named & Anonymous Functions
 // At the start of your program all variable names and named functions are hoisted to top.
 // This takes memory in the browser, so it may be better to consider using anonymous functions.
 
