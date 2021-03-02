@@ -30,10 +30,31 @@ class HashTable {
         return undefined
     }
 
+    keys() {
+        const keys = []
+        for(let i = 0; i < this.data.length; i++) {
+            if(this.data[i]) {
+                if(this.data[i].length > 1) {
+                    for(let j = 0; j < this.data[i].length; j++) {
+                        keys.push(this.data[i][j][0]) // this gets us the correct k/v inside of a bucket and then the value
+                    }
+                }
+                else {
+                    keys.push(this.data[i][0][0])
+                }
+            }
+        }
+        return keys
+    }
+
 }
 
 const hash = new HashTable(20)
 hash.set("test", 1)
 hash.set("test2", 2)
-console.log(hash.get("test"))
-console.log(hash)
+hash.set("test3", 3)
+hash.set("test4", 4)
+hash.set("test5", 5)
+hash.set("test6", 6)
+
+console.log(hash.keys())
